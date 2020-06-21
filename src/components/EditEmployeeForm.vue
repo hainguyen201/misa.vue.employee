@@ -42,9 +42,10 @@ export default {
         putData(){
             this.employee.emploeeName=this.emploeeName;
             this.employee.employeeDateOfBirth=this.dataFormat(this.employeeDateOfBirth);
-            this.employee.emploeeName=this.emploeeName;
+            this.employee.employeeAddress=this.employeeAddress;
+            this.employee.employeeId=this.id
             console.log(this.employee);
-            this.putEmployee(this.employee, this.id)
+            this.putEmployee(this.employee)
         },
         dataFormat(value){
           if(value){
@@ -53,4 +54,14 @@ export default {
       }
     }
 }
+
 </script>
+<style  scoped>
+.addform span{
+    display: inline-block;
+    min-width: 100px;
+}
+.addform>div{
+    margin: 10px;
+}
+</style>

@@ -14,7 +14,7 @@
                <td>{{employee.employeeAddress}}</td>
                <td>{{employee.employeeDateOfBirth}}</td>
                <td><router-link :to="{path:'/edit',params:employee, query:{id: employee.employeeId} }" class="btn btn-dark">Sua</router-link></td>
-               <td><span class="btn btn-dark" v-on:click='deleteEmployee(employee.employeeId)'>Xoa</span></td>
+               <td><span class="btn btn-dark" v-on:click='deleteData(employee.employeeId)'>Xoa</span></td>
            </tr>
            </tbody>
        </table>
@@ -26,15 +26,16 @@ import {mapGetters, mapActions} from 'Vuex'
 import moment from 'moment'
 export default{
     name: 'Employee',
-    data(){
+    data(){ 
         return {
             
         }
     },
     methods: {
-        ...mapActions(['fetchEmployee']),
-        deleteEmployee(employeeid){
-            
+        ...mapActions(['fetchEmployee', 'deleteEmployee']),
+        deleteData(id){
+           
+            this.deleteEmployee(id);
         }   
     },
     

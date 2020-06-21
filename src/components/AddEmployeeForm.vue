@@ -36,7 +36,7 @@ export default {
       ...mapActions(['postEmployee']),
       postData(){
           var employee={};
-          employee.employeeDateOfBirth=this.dataFormat(this.employeeDataOfBirth);
+          employee.employeeDateOfBirth=this.dataFormat(this.employeeDateOfBirth);
           employee.emploeeName=this.emploeeName;
           employee.employeeAddress=this.employeeAddress;
           console.log(employee)
