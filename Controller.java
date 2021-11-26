@@ -36,4 +36,9 @@ public class EmployeeController {
         Iterable<Employee> lst= employeeRepository.findAll();
         return new ResponseEntity<>(employeeRepository.findAll(), HttpStatus.OK);
     }
+    @PutMapping (value="/employee/{id}")
+    public ResponseEntity<Employee> update(@PathVariable int id){
+        employeeRepository.update(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
